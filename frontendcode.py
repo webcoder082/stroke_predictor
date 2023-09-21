@@ -14,7 +14,7 @@ def main():
     BMI=st.text_input("BMI")
     smoker_or_not=st.radio("Are you a smoker",["Yes","No"])
     if st.button('Predict'):
-        st.success("youclicked ")
+        st.success("youclicked ",hypertension)
 
 
 
