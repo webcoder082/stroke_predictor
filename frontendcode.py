@@ -1,7 +1,7 @@
 import streamlit as st
 
 def main():
-    st.title("Stroke Prediction By Intro-Me")
+    st.title("Stroke Prediction a product by Intro-Me")
     gender=st.text_input("Gender")
     
     age=st.text_input("age")
