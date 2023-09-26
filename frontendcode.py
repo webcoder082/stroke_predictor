@@ -1,6 +1,6 @@
 import streamlit as st
 import pickle
-model=pickle.load(open("https://github.com/webcoder082/stroke_predictor/blob/main/stroke_rfmodel",'rb'))
+model=pickle.load(open("main/stroke_rfmodel",'rb'))
 
 def main():
     st.title("Stroke Prediction a product by Intro-Me")
