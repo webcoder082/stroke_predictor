@@ -1,20 +1,45 @@
 import streamlit as st
+import pickle
+model=pickle.load(open("https://github.com/webcoder082/stroke_predictor/blob/main/stroke_rfmodel",'rb'))
 
 def main():
     st.title("Stroke Prediction a product by Intro-Me")
-    gender=st.text_input("Gender")
+    gender=st.radio("choose gender",["Male","Female"])
     
     age=st.text_input("Enter Age")
     hypertension=st.radio("Do you have blood pressure",["Yes","No"])
     heartproblem=st.radio("Do you have Heart problem",["Yes","No"])
     married_or_not=st.radio("Are you married",["Yes","No"])
-    private_or_self_or_gov_job=st.radio("IN Which sector you are working",["GOVERNMENT","PRIVATE","SELF-EMPLOYEE"])
+    private_or_self_or_gov_job=st.radio("IN Which sector you are working",["GOVERNMENT","PRIVATE","SELF-EMPLOYED"])
     urban_or_rural=st.radio("which area ypou are living",["Rural","Urban"])
     glucose_levels=st.text_input("glucose_levels")
     BMI=st.text_input("BMI")
-    smoker_or_not=st.radio("Are you a smoker",["Yes","No"])
+    smoker_or_not=st.radio("Are you a smoker",["SMOKING","NOT SMOKING","SMOKED IN PAST NOT NOW"])
+    d1={  "Yes":1,
+          "No":0,
+          "Male":1,
+          "Female":0,
+          "PRIVATE":2,
+          "SELF-EMPLOYED":3,
+          "GOVERNMENT":0,
+          "Rural":0,
+          "Urban":1,
+          "SMOKING":3,
+          "NOT SMOKING":2,
+          "SMOKED IN PAST NOT NOW":1
+
+
+
+
+          }
     if st.button('Predict'):
-        st.success("youclicked ",{hypertension})
+        st.success("youclicked {}".format(d1[smoker_or_not]))
+        makeprediction=model.predict([[d1[gender],age,d1[hypertension],d1[heartproblem],d1[married_or_not],d1[private_or_self_or_gov_job],d1[urban_or_rural],glucose_levels,BMI,d1[smoker_or_not]]])
+        if makeprediction[0]==1:
+            st.warning("you may have stroke in future it is not confirmation just prediction",icon="⚠️")
+        else:
+            st.success("tou are lucky no stroke according to given data")
+        
 
 
 
