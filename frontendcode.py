@@ -37,7 +37,7 @@ def main():
         if makeprediction[0]==1:
             st.warning("YOU MAY HAVE STROKE IN FUTURE IT IS JUST PREDICTION DON'T WORRY CONFIRM WITH YOUR DOCTOR")
         else:
-            st.success("YOU ARE LUCKY NO STROKE ACCORDING TO GIVEN DATA")
+            st.success("YOU ARE LUCKY NO STROKE IN FUTURE ACCORDING TO GIVEN DATA")
         
 
 
