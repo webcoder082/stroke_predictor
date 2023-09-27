@@ -3,7 +3,15 @@ import pickle
 model=pickle.load(open("stroke_rfmodel",'rb'))
 
 def main():
+    hide_streamlit_style = """
+            <style>
+            #MainMenu {visibility: hidden;}
+            footer {visibility: hidden;}
+            </style>
+            """
+    st.markdown(hide_streamlit_style, unsafe_allow_html=True) 
     st.title("Stroke Prediction a product by Intro-Me")
+    
     gender=st.radio("choose gender",["Male","Female"])
     
     age=st.text_input("Enter Age")
