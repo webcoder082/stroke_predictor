@@ -10,7 +10,7 @@ def main():
             </style>
             """
     st.markdown(hide_streamlit_style, unsafe_allow_html=True) 
-    st.title("Stroke Prediction a product by Intro-Me")
+    st.title("BRAIN STROKE PREDICTOR BY MANIKANTA")
     
     gender=st.radio("choose gender",["Male","Female"])
     
