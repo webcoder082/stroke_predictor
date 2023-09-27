@@ -33,12 +33,11 @@ def main():
 
           }
     if st.button('Predict'):
-        st.success("youclicked {}".format(d1[smoker_or_not]))
         makeprediction=model.predict([[d1[gender],age,d1[hypertension],d1[heartproblem],d1[married_or_not],d1[private_or_self_or_gov_job],d1[urban_or_rural],glucose_levels,BMI,d1[smoker_or_not]]])
         if makeprediction[0]==1:
-            st.warning("you may have stroke in future it is not confirmation just prediction",icon="⚠️")
+            st.warning("YOU MAY HAVE STROKE IN FUTURE IT IS JUST PREDICTION DON'T WORRY CONFIRM WITH YOUR DOCTOR",icon="⚠️")
         else:
-            st.success("tou are lucky no stroke according to given data")
+            st.success("YOU ARE LUCKY NO STROKE ACCORDING TO GIVEN DATA")
         
 
 
