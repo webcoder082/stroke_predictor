@@ -8,7 +8,8 @@ def main():
             #MainMenu {visibility: hidden;}
             footer {visibility: hidden;}
            .viewerBadge_link__qRIco{
-           width=0
+           width:0;
+           height:0;
            }
             </style>
             """
