@@ -11,7 +11,7 @@ def main():
             </style>
             """
     st.markdown(hide_streamlit_style, unsafe_allow_html=True) 
-    st.title("BRAIN STROKE PREDICTOR BY MANIKANTA")
+    st.title("BRAIN STROKE PREDICTOR BY MANIKANTA please fill all columns to avoid error")
     
     gender=st.radio("choose gender",["Male","Female"])
     
