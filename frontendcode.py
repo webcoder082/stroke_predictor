@@ -45,9 +45,7 @@ def main():
         if age == "" or glucose_levels == "" or BMI == "":
             st.error("Please enter Age, Glucose Level and BMI.")
         else:
-            age=int(age)
-            glucose_levels=int(glucose_levels)
-            BMI=int(BMI)
+            
             makeprediction=model.predict([[d1[gender],age,d1[hypertension],d1[heartproblem],d1[married_or_not],d1[private_or_self_or_gov_job],d1[urban_or_rural],glucose_levels,BMI,d1[smoker_or_not]]])
             if makeprediction[0]==1:
                 st.warning("YOU MAY HAVE STROKE IN FUTURE IT IS JUST PREDICTION DON'T WORRY CONFIRM WITH YOUR DOCTOR")
